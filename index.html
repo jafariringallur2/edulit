@@ -266,7 +266,7 @@
                     <input class="form-control mb-3" placeholder="serach" style="width: 100%;border-radius:0.5rem;    height: 3rem;
                     padding-left: 1rem;
                     padding-right: 1rem;
-                    font-size: 1rem">
+                    font-size: 1rem" id="search_input" onkeyup="search()">
                 </div>
             </div>
             <div class="row align-items-center">
@@ -459,9 +459,14 @@
                 loadReasult();
             }
 
+            function search(){
+                loadReasult();
+            }
+
             function loadReasult() {
+                var keyword = $('#search_input').val();
                 $.ajax({
-                    url: "https://edulit.iqra.org.in/api/results?category_id=" + category_id,
+                    url: "https://edulit.iqra.org.in/api/results?category_id=" + category_id + "&keyword=" + keyword,
                     method: 'GET',
                     beforeSend: function() {
                         $('#skelton-section').show();
