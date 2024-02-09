@@ -259,7 +259,9 @@
                         <h5 class="card-title">Edulit Results</h5>
                     </div>
                 </div>
-                <div class="col-md-6"></div>
+                <div class="col-md-6" style="text-align: right;">
+                    <a class="btn" style="background-color: #1f384c;color: white; padding: 3px 6px;" href="./team-points.html">Team Points</a>
+                </div>
             </div>
             <div class="row align-items-center">
                 <div class="col-md-12">
@@ -467,6 +469,7 @@
                 var keyword = $('#search_input').val();
                 $.ajax({
                     url: "https://edulit.iqra.org.in/api/results?category_id=" + category_id + "&keyword=" + keyword,
+                    // url: "http://127.0.0.1:8000/api/results?category_id=" + category_id + "&keyword=" + keyword,
                     method: 'GET',
                     beforeSend: function() {
                         $('#skelton-section').show();
